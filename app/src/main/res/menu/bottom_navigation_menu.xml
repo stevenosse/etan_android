@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bbHomeItem"
+        android:iconTint="@color/purple_700"
+        android:icon="@android:drawable/ic_dialog_map"
+        android:title="Arrêts" />
+
+    <item
+        android:id="@+id/placeholder"
+        android:title="" />
+
+    <item
+        android:id="@+id/bbFavItem"
+        android:iconTint="@color/purple_700"
+        android:icon="@android:drawable/ic_menu_mylocation"
+        android:title="Favoris" />
+
+</menu>
