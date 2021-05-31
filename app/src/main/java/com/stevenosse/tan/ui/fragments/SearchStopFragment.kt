@@ -5,12 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.stevenosse.tan.R
+import com.stevenosse.tan.adapters.StopSearchResultAdapter
+import kotlinx.android.synthetic.main.fragment_search_stop.*
 
 class SearchStopFragment : Fragment() {
+    lateinit var stopSearchResultAdapter: StopSearchResultAdapter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onStart() {
+        super.onStart()
+        this.initializeResultList()
     }
 
     override fun onCreateView(
@@ -23,5 +28,11 @@ class SearchStopFragment : Fragment() {
     companion object {
         @JvmStatic
         fun newInstance() = SearchStopFragment()
+    }
+
+    private fun initializeResultList() {
+        stopSearchResultAdapter = StopSearchResultAdapter()
+        rvSearchResultList.adapter = stopSearchResultAdapter
+        rvSearchResultList.layoutManager = LinearLayoutManager(this.context)
     }
 }
